@@ -16,11 +16,13 @@ export function Magnetic({
   className,
 }: MagneticProps) {
   const ref = useMagnetic<HTMLDivElement>(strength, radius);
+  // No CSS transition on transform — useMagnetic already smooths the motion
+  // via requestAnimationFrame. Mixing CSS transitions with rAF-driven transform
+  // causes the button to "float" on slow mouse movement.
   return (
     <div
       ref={ref}
       className={cn('inline-block will-change-transform', className)}
-      style={{ transition: 'transform 0.4s var(--ease-out-soft)' }}
     >
       {children}
     </div>

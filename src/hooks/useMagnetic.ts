@@ -34,8 +34,14 @@ export function useMagnetic<T extends HTMLElement = HTMLElement>(
 
     const onMove = (e: PointerEvent) => {
       const rect = el.getBoundingClientRect();
-      const ex = e.clientX - (rect.left + rect.width / 2);
-      const ey = e.clientY - (rect.top + rect.height / 2);
+      // rect already reflects the current cx/cy translate. Subtract it back
+      // so we measure the cursor delta from the element's *rest* center —
+      // otherwise the magnetic pull moves the rect, which moves the target,
+      // creating drift (the button "floats" on slow cursor motion).
+      const restX = rect.left + rect.width / 2 - cx;
+      const restY = rect.top + rect.height / 2 - cy;
+      const ex = e.clientX - restX;
+      const ey = e.clientY - restY;
       const dist = Math.hypot(ex, ey);
       const r = Math.max(rect.width, rect.height) / 2 + radius;
       if (dist < r) {
