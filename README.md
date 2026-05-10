@@ -31,7 +31,7 @@ src/
 │
 ├── components/
 │   ├── layout/
-│   │   ├── Header.tsx            # фикс. шапка с blur, magnetic CTA
+│   │   ├── Header.tsx            # фикс. шапка с blur
 │   │   └── Footer.tsx            # 4-колоночный, гигант "HANA"
 │   ├── sections/
 │   │   ├── Hero.tsx              # HANA STUDIO + звуковые волны + ON AIR
@@ -41,14 +41,10 @@ src/
 │   │   └── Marquee.tsx           # бесконечная лента "услуг"
 │   ├── ui/
 │   │   ├── Button.tsx            # pill-кнопки (primary/secondary/ghost)
-│   │   ├── Magnetic.tsx          # обёртка для magnetic-эффекта
 │   │   └── SectionLabel.tsx      # eyebrow-лейбл секций
 │   └── decor/
 │       ├── SoundWaves.tsx        # волны + эквалайзер ON AIR
 │       └── Scribbles.tsx         # рукописные завитки и зигзаги
-│
-├── hooks/
-│   └── useMagnetic.ts            # magnetic-кнопки на rAF
 │
 └── lib/
     ├── cn.ts                     # классы через clsx
@@ -98,7 +94,6 @@ src/
 
 - **Анимации звуковых волн** в Hero (`SoundWaves`) — обыгрывают тематику студии
 - **Эквалайзер `ON AIR`** под кнопками Hero — `SoundBars`
-- **Magnetic-кнопки** — Регистрация в шапке + CTA в Hero
 - **Parallax** — две перекрывающихся карточки в OUR TG
 - **Marquee** — две ленты с разной скоростью и направлением между секциями
 - **Анимированный завиток** (`Squiggle`) рисуется поверх по мере прокрутки

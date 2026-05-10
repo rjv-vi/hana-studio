@@ -1,6 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
 import { Button } from '../ui/Button';
-import { Magnetic } from '../ui/Magnetic';
 import { SoundBars, SoundWaves } from '../decor/SoundWaves';
 import { EASE_OUT } from '../../lib/motion';
 
@@ -101,16 +100,12 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 1.05, ease: EASE_OUT }}
           className="mt-10 flex flex-wrap items-center justify-center gap-3"
         >
-          <Magnetic strength={0.28}>
-            <Button variant="primary" size="lg">
-              Заказать озвучку
-            </Button>
-          </Magnetic>
-          <Magnetic strength={0.28}>
-            <Button variant="secondary" size="lg">
-              Послушать примеры
-            </Button>
-          </Magnetic>
+          <Button variant="primary" size="lg">
+            Заказать озвучку
+          </Button>
+          <Button variant="secondary" size="lg">
+            Послушать примеры
+          </Button>
         </motion.div>
 
         {/* Equalizer */}

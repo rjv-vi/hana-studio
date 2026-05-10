@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
-import { Magnetic } from '../ui/Magnetic';
 import { cn } from '../../lib/cn';
 import { EASE_OUT } from '../../lib/motion';
 
@@ -69,11 +68,9 @@ export function Header() {
 
           {/* CTA */}
           <div className="flex items-center gap-2">
-            <Magnetic strength={0.25} radius={50}>
-              <Button variant="primary" size="sm">
-                Регистрация
-              </Button>
-            </Magnetic>
+            <Button variant="primary" size="sm">
+              Регистрация
+            </Button>
           </div>
         </div>
       </div>
